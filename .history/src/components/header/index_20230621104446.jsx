@@ -26,7 +26,7 @@ function Header() {
   };
 
   const handleLogoutClick = () => {
-    dispatch( logoutUser() );
+    dispatch( logoutUser );
   };
 
   return (

@@ -22,11 +22,11 @@ function Header() {
   console.log(currentUser);
 
   const handleLoginClick = () => {
-    dispatch( loginUser({name: "algo", email: "sbore@gmail"}) );
+    dispatch({ loginUser({name: "algo", email: "sbore@gmail"}) });
   };
 
   const handleLogoutClick = () => {
-    dispatch( logoutUser() );
+    dispatch({ logoutUser });
   };
 
   return (

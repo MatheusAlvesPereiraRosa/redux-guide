@@ -2,10 +2,8 @@ import { useState } from "react";
 
 // Components
 import Cart from "../cart/index";
-import { useSelector, useDispatch } from "react-redux";
+import {useSelector, useDispatch} from "react-redux"
 import UserActionTypes from "../../redux/user/action-types";
-import { loginUser } from "../../redux/user/actions";
-import { logoutUser } from "../../redux/user/actions";
 
 // Styles
 import * as Styles from "./styles";
@@ -17,27 +15,32 @@ function Header() {
     setCartIsVisible(true);
   };
 
-  const { currentUser } = useSelector((rootReducer) => rootReducer.userReducer);
-  const dispatch = useDispatch();
-  console.log(currentUser);
+  const {currentUser} = useSelector(rootReducer => rootReducer.userReducer)
+  const dispatch = useDispatch()
+  console.log(currentUser)
 
   const handleLoginClick = () => {
-    dispatch( loginUser({name: "algo", email: "sbore@gmail"}) );
-  };
+    dispatch({
+      type: UserActionTypes.LOGIN,
+      payload: {name: "Felipe", email: "Algo@gmail.com"}
+    })
+  }
 
   const handleLogoutClick = () => {
-    dispatch( logoutUser() );
-  };
+    dispatch({
+      type: UserActionTypes.LOGIN
+    })
+  }
 
   return (
     <Styles.Container>
       <Styles.Logo>Redux Shopping</Styles.Logo>
       <Styles.Buttons>
-        {currentUser ? (
-          <div onClick={handleLogoutClick}>Sair</div>
-        ) : (
-          <div onClick={handleLoginClick}>Login</div>
-        )}
+        {
+          currentUser ? (
+            <div onClick={handleLogoutClick}>Sair</div>
+          ) : (<div onClick={handleLoginClick}>Login</div>)
+        }
         <div onClick={handleCartClick}>Carrinho</div>
       </Styles.Buttons>
 
