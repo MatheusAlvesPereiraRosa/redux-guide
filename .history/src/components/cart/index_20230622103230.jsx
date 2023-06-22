@@ -19,9 +19,9 @@ const Cart = ({ isVisible, setIsVisible }) => {
       <Styles.CartContent>
         <Styles.CartTitle>Seu Carrinho</Styles.CartTitle>
 
-        {products.map(product => <CartItem product={product} key={product.id}></CartItem>)}
+        {products.map(product => <CartItem product={product}></CartItem>)}
 
-        <Styles.CartTotal>R$ {productsTotalPrice}</Styles.CartTotal>
+        <Styles.CartTotal>{productsTotalPrice}</Styles.CartTotal>
       </Styles.CartContent>
     </Styles.CartContainer>
   );

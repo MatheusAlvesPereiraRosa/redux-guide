@@ -50,7 +50,7 @@ function Header() {
           <div onClick={handleLoginClick}>Login</div>
         )}
 
-        {products.length === 0 ? (
+        {products.length == 0 ? (
           <div onClick={handleCartClick}>Carrinho</div>
         ) : (
           <div onClick={handleCartClick}>Carrinho({productsCount})</div>

@@ -21,7 +21,7 @@ const Cart = ({ isVisible, setIsVisible }) => {
 
         {products.map(product => <CartItem product={product} key={product.id}></CartItem>)}
 
-        <Styles.CartTotal>R$ {productsTotalPrice}</Styles.CartTotal>
+        <Styles.CartTotal>{productsTotalPrice}</Styles.CartTotal>
       </Styles.CartContent>
     </Styles.CartContainer>
   );

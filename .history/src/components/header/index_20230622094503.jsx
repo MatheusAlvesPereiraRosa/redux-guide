@@ -10,7 +10,6 @@ import { logoutUser } from "../../redux/user/actions";
 // Styles
 import * as Styles from "./styles";
 import rootReducer from "../../redux/root-reducer";
-import { selectProductsCount } from "../../redux/cart/cart.selectors";
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
@@ -22,13 +21,13 @@ function Header() {
   const { currentUser } = useSelector((rootReducer) => rootReducer.userReducer);
   const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
 
-  const productsCount = useSelector(selectProductsCount)
+  console.log(products.length)
 
   const dispatch = useDispatch();
 
-  /*const productsCount = useMemo(() => {
+  const productsCount = useMemo(() => {
     return products.reduce((acc, curr) => acc + curr.quantity, 0);
-  }, [products]);*/
+  }, [products]);
 
   console.log(currentUser);
 
@@ -51,9 +50,9 @@ function Header() {
         )}
 
         {products.length === 0 ? (
-          <div onClick={handleCartClick}>Carrinho</div>
-        ) : (
           <div onClick={handleCartClick}>Carrinho({productsCount})</div>
+        ) : (
+          <div onClick={handleCartClick}>Carrinho</div>
         )}
       </Styles.Buttons>
 

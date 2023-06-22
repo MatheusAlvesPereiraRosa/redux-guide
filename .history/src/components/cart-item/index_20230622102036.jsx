@@ -13,11 +13,11 @@ const CartItem = ({ product }) => {
   };
 
   const handleIncreaseClick = () => {
-    dispatch(increaseProductQuantity(product.id))
+    dispatch(increaseProductQuantity)
   };
 
   const handleDecreaseClick = () => {
-    dispatch(decreaseProductQuantity(product.id))
+    dispatch(decreaseProductQuantity)
   };
 
   return (
